@@ -46,10 +46,10 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 ### GET
 
 ```java
-// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
+// RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-User:
+[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 User                 get("me")                                        // /me
@@ -78,7 +78,7 @@ ArrayList<User>      get("groups/{group_id}/contributors")            // /groups
                                                                       // 2271 = SoundCloud Sweetness ;)
 ```
 
-Track:
+[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                get("tracks/{track_id}")                         // /tracks/{track_id}
@@ -98,7 +98,7 @@ ArrayList<Track>     get("groups/{group_id}/tracks")                  // /groups
 
 ```
 
-Playlist:
+[Playlist](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Playlist.java):
 
 ```java
 Playlist             get("playlists/{playlist_id}")                   // /playlists/{playlist_id}
@@ -111,7 +111,7 @@ ArrayList<PlayList>  get("me/playlists")                              // /me/pla
                      getMePlaylists([Integer offset, Integer limit])
 ```
 
-Group:
+[Group](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Group.java):
 
 ```java
 Group                get("groups/{group_id}")                         // /groups/{group_id}
@@ -124,7 +124,7 @@ ArrayList<Group>     get("me/groups")                                 // /me/gro
                      getMeGroups([Integer offset, Integer limit])
 ```
 
-Comment:
+[Comment](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```java
 ArrayList<Comment>   get("me/comments")                               // /me/comments
@@ -137,17 +137,17 @@ ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks
 ### PUT
 
 ```java
-// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
+// RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-User:
+[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 User                 put("me", User user)                             // /me
                      putMe(User user)
 ```
 
-Track:
+[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                put("tracks/{track_id}", Track track)            // /tracks/{track_id}
@@ -159,17 +159,17 @@ Boolean              put("me/favorites/{track_id}")                   // /me/fav
 ### POST
 
 ```java
-// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
+// RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-Track:
+[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                post("tracks", Track track))                     // /tracks
                      postTrack(Track track)
 ```
 
-Comment:
+[Comment](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```java
 Comment              post("tracks/{track_id}/comments", Comment comment)  // /tracks/{track_id}/comments
@@ -179,17 +179,17 @@ Comment              post("tracks/{track_id}/comments", Comment comment)  // /tr
 ### DELETE
 
 ```java
-// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
+// RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-User:
+[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 Boolean              delete("me/followings/{contact_id}")             // /me/followings/{contact_id}
 Boolean              delete("users/{user_id}/followings/{contact_id}") // /users/{user_id}/followings/{contact_id}
 ```
 
-Track:
+[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Boolean              delete("tracks/{track_id}")                      // /tracks/{track_id}
