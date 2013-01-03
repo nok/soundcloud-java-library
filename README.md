@@ -45,7 +45,7 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 
 ### GET
 
-```java
+```xml
 // RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
