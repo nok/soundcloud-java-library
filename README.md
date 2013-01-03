@@ -49,7 +49,7 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 // RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
+User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 User                 get("me")                                        // /me
@@ -78,7 +78,7 @@ ArrayList<User>      get("groups/{group_id}/contributors")            // /groups
                                                                       // 2271 = SoundCloud Sweetness ;)
 ```
 
-[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
+Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                get("tracks/{track_id}")                         // /tracks/{track_id}
@@ -98,7 +98,7 @@ ArrayList<Track>     get("groups/{group_id}/tracks")                  // /groups
 
 ```
 
-[Playlist](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Playlist.java):
+Playlist[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Playlist.java):
 
 ```java
 Playlist             get("playlists/{playlist_id}")                   // /playlists/{playlist_id}
@@ -111,7 +111,7 @@ ArrayList<PlayList>  get("me/playlists")                              // /me/pla
                      getMePlaylists([Integer offset, Integer limit])
 ```
 
-[Group](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Group.java):
+Group[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Group.java):
 
 ```java
 Group                get("groups/{group_id}")                         // /groups/{group_id}
@@ -124,7 +124,7 @@ ArrayList<Group>     get("me/groups")                                 // /me/gro
                      getMeGroups([Integer offset, Integer limit])
 ```
 
-[Comment](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
+Comment[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```java
 ArrayList<Comment>   get("me/comments")                               // /me/comments
@@ -140,14 +140,14 @@ ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks
 // RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
+User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 User                 put("me", User user)                             // /me
                      putMe(User user)
 ```
 
-[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
+Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                put("tracks/{track_id}", Track track)            // /tracks/{track_id}
@@ -162,14 +162,14 @@ Boolean              put("me/favorites/{track_id}")                   // /me/fav
 // RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
+Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Track                post("tracks", Track track))                     // /tracks
                      postTrack(Track track)
 ```
 
-[Comment](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
+Comment[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```java
 Comment              post("tracks/{track_id}/comments", Comment comment)  // /tracks/{track_id}/comments
@@ -182,14 +182,14 @@ Comment              post("tracks/{track_id}/comments", Comment comment)  // /tr
 // RESULT ────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
 ```
 
-[User](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
+User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```java
 Boolean              delete("me/followings/{contact_id}")             // /me/followings/{contact_id}
 Boolean              delete("users/{user_id}/followings/{contact_id}") // /users/{user_id}/followings/{contact_id}
 ```
 
-[Track](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
+Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```java
 Boolean              delete("tracks/{track_id}")                      // /tracks/{track_id}
