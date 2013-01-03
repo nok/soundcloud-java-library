@@ -209,11 +209,11 @@ Read user details:
 
 ```java
 User me = soundcloud.getMe();
-System.out.println( me );
+System.out.println(me);
 
-System.out.println( "ID: "+me.getId() );
-System.out.println( "Username: "+me.getUsername() );
-System.out.println( "Avatar-URL: "+me.getAvatarUrl() );
+System.out.println("ID: "+me.getId());
+System.out.println("Username: "+me.getUsername());
+System.out.println("Avatar-URL: "+me.getAvatarUrl());
 ```
 
 Update user details:
@@ -233,7 +233,7 @@ me = soundcloud.putMe(me);
 // OR
 // me = soundcloud.put("me", me);
 
-System.out.println( me );
+System.out.println(me);
 ```
 
 Which sound do you like? Show all your favorites:
@@ -259,7 +259,7 @@ for(int i=0; i<pages; i++){
     all_tracks.addAll(temp_tracks);
 }
 for(Track track : all_tracks){
-    System.out.println( track.getTitle()+" (#"+track.getId()+")" );
+    System.out.println(track.getTitle()+" (#"+track.getId()+")");
 }
 ```
 
@@ -289,7 +289,7 @@ Boolean removing = soundcloud.deleteFavoriteTrack(72688617);
 // Boolean removing = soundcloud.delete("me/favorites/72688617")
 
 if(removing){
-    System.out.println( "Successful removing." );
+    System.out.println("Successful removing.");
 }
 ```
 
@@ -303,7 +303,7 @@ Track track = soundcloud.postTrack(new Track("titel of the song", "path/to/file.
 // OR
 // Track track = soundcloud.post("tracks", new Track("titel of the song!", "path/to/file.mp3"));
 
-System.out.println( track.getTitle()+" (#"+track.getId()+")" );
+System.out.println(track.getTitle()+" (#"+track.getId()+")");
 ```
 
 Delete a track (Bad example, because we love your music!):
@@ -314,7 +314,7 @@ Boolean deletion = soundcloud.deleteTrack(track.getId());
 // Boolean deletion = soundcloud.delete("tracks/"+track.getId());
 
 if(deletion){
-    System.out.println( "Successful deletion." );
+    System.out.println("Successful deletion.");
 }
 ```
 
@@ -328,7 +328,7 @@ ArrayList<Track> streamable_tracks = soundcloud.get("tracks", new String[] {
 });
 
 for(Track track : streamable_tracks){
-    System.out.println( track.getTitle()+" (#"+track.getId()+")" );
+    System.out.println(track.getTitle()+" (#"+track.getId()+")");
 }
 ```
 
@@ -339,7 +339,7 @@ Get the moderators of a group:
 ```java
 ArrayList<User> moderators = soundcloud.get("groups/2271/moderators");
 for(User user : moderators){
-    System.out.println( user.getId() );
+    System.out.println(user.getId());
 }
 ```
 
@@ -354,7 +354,7 @@ comment = soundcloud.postCommentToTrack(70734856, comment);
 // OR
 // comment = soundcloud.post("tracks/70734856/comments", comment);
 
-System.out.println( comment );
+System.out.println(comment);
 ```
 
 ## License
