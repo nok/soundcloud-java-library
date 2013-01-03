@@ -51,7 +51,7 @@ RESULT ───────────── METHOD ────────�
 
 User:
 
-```
+```java
 User                 get("me")                                        // /me
                      getMe()
 
@@ -207,7 +207,7 @@ Boolean              delete("users/{user_id}/favorites/{track_id}")   // /users/
 
 Read user details:
 
-```
+```java
 User me = soundcloud.getMe();
 System.out.println( me );
 
@@ -219,7 +219,7 @@ System.out.println( "Avatar-URL: "+me.getAvatarUrl() );
 
 Update user details:
 
-```
+```java
 User me = soundcloud.getMe();
 // OR
 // me = soundcloud.get("me");
@@ -239,7 +239,7 @@ System.out.println( me );
 
 Which sounds do you like? Show all your favorites:
 
-```
+```java
 User me = soundcloud.getMe();
 
 Integer count = me.getPublicFavoritesCount();
@@ -266,7 +266,7 @@ for(Track track : all_tracks){
 
 Like ~ Add a new track to your favorites:
 
-```
+```java
 ArrayList<Track> tracks = soundcloud.getTracks(0,3);
 // OR
 // ArrayList<Track> tracks = soundcloud.get("tracks", new String[] {
@@ -284,7 +284,7 @@ Boolean add = soundcloud.putFavoriteTrack(track.getId());
 
 Unlike ~ Remove a track from your favorites:
 
-```
+```java
 Boolean removing = soundcloud.deleteFavoriteTrack(72688617);
 // OR
 // Boolean removing = soundcloud.delete("me/favorites/72688617")
@@ -299,7 +299,7 @@ if(removing){
 
 Upload a new track:
 
-```
+```java
 Track track = soundcloud.postTrack(new Track("titel of the song", "path/to/file.mp3"));
 // OR
 // Track track = soundcloud.post("tracks", new Track("titel of the song!", "path/to/file.mp3"));
@@ -309,7 +309,7 @@ System.out.println( track.getTitle()+" (#"+track.getId()+")" );
 
 Delete a track (Bad example, because we love your music!):
 
-```
+```java
 Boolean deletion = soundcloud.deleteTrack(track.getId());
 // OR
 // Boolean deletion = soundcloud.delete("tracks/"+track.getId());
@@ -321,7 +321,7 @@ if(deletion){
 
 List the last ten streamable tracks:
 
-```
+```java
 ArrayList<Track> streamable_tracks = soundcloud.get("tracks", new String[] {
     "order","created_at",
     "filter","streamable",
@@ -337,7 +337,7 @@ for(Track track : streamable_tracks){
 
 Get the moderators of a group:
 
-```
+```java
 ArrayList<User> moderators = soundcloud.get("groups/2271/moderators");
 for(User user : moderators){
     System.out.println( user.getId() );
@@ -348,7 +348,7 @@ for(User user : moderators){
 
 Post a new comment:
 
-```
+```java
 Comment comment = new Comment("Nice track!"); // new Comment("Nice track!", 120) // +timestamp
 
 comment = soundcloud.postCommentToTrack(70734856, comment);
