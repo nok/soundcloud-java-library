@@ -16,10 +16,10 @@ Note: You need to put the latest dependent libraries in your CLASSPATH before co
 
 Add the compiled library to your classpath, import the library and create a new instance of the wrapper with your [application](http://soundcloud.com/you/apps) and personal [login](https://soundcloud.com/login/forgot) data:
 
-```
+```java
 import de.voidplus.soundcloud.*;
 ``` 
-```
+```java
 SoundCloud soundcloud = new SoundCloud(
     "APP_CLIENT_ID",
     "APP_CLIENT_SECRET",
@@ -32,7 +32,7 @@ SoundCloud soundcloud = new SoundCloud(
 
 The service of [Apigee](https://apigee.com/embed/console/soundcloud) is proper for learning and testing the official [SoundCloud API](http://developers.soundcloud.com/docs/api/reference). All API calls are mapped to REST methods:
 
-```
+```java
 public  get( String path [, String[] filters] )  <T>:T                // GET
 public  put( String path [, Object value] )  <T>:T                    // PUT
 public  post( String path, Object value )  <T>:T                      // POST
@@ -52,8 +52,8 @@ RESULT ───────────── METHOD ────────�
 User:
 
 ```java
-User                 get("me")                                        // /me
-                     getMe()
+User                 get("me");                                       // /me
+                     getMe();
 
 ArrayList<User>      get("users")                                     // /users
                      getUsers([Integer offset, Integer limit])
@@ -214,7 +214,6 @@ System.out.println( me );
 System.out.println( "ID: "+me.getId() );
 System.out.println( "Username: "+me.getUsername() );
 System.out.println( "Avatar-URL: "+me.getAvatarUrl() );
-
 ```
 
 Update user details:
