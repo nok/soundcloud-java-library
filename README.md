@@ -45,15 +45,15 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 
 ### GET
 
-```
+```java
 RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
 ```
 
 User:
 
 ```java
-User                 get("me");                                       // /me
-                     getMe();
+User                 get("me")                                        // /me
+                     getMe()
 
 ArrayList<User>      get("users")                                     // /users
                      getUsers([Integer offset, Integer limit])
@@ -80,7 +80,7 @@ ArrayList<User>      get("groups/{group_id}/contributors")            // /groups
 
 Track:
 
-```
+```java
 Track                get("tracks/{track_id}")                         // /tracks/{track_id}
                      getTrack({track_id})
 
@@ -100,7 +100,7 @@ ArrayList<Track>     get("groups/{group_id}/tracks")                  // /groups
 
 Playlist:
 
-```
+```java
 Playlist             get("playlists/{playlist_id}")                   // /playlists/{playlist_id}
                      getPlaylist({playlist_id})
 
@@ -113,7 +113,7 @@ ArrayList<PlayList>  get("me/playlists")                              // /me/pla
 
 Group:
 
-```
+```java
 Group                get("groups/{group_id}")                         // /groups/{group_id}
                      getGroup({group_id})
 
@@ -126,7 +126,7 @@ ArrayList<Group>     get("me/groups")                                 // /me/gro
 
 Comment:
 
-```
+```java
 ArrayList<Comment>   get("me/comments")                               // /me/comments
                      getMeComments([Integer offset, Integer limit])
 
@@ -136,20 +136,20 @@ ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks
 
 ### PUT
 
-```
+```java
 RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
 ```
 
 User:
 
-```
+```java
 User                 put("me", User user)                             // /me
                      putMe(User user)
 ```
 
 Track:
 
-```
+```java
 Track                put("tracks/{track_id}", Track track)            // /tracks/{track_id}
 
 Boolean              put("me/favorites/{track_id}")                   // /me/favorites/{track_id}
@@ -158,40 +158,40 @@ Boolean              put("me/favorites/{track_id}")                   // /me/fav
 
 ### POST
 
-```
+```java
 RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
 ```
 
 Track:
 
-```
+```java
 Track                post("tracks", Track track))                     // /tracks
                      postTrack(Track track)
 ```
 
 Comment:
 
-```
+```java
 Comment              post("tracks/{track_id}/comments", Comment comment)  // /tracks/{track_id}/comments
                      postCommentToTrack({track_id}, Comment comment)
 ```
 
 ### DELETE
 
-```
+```java
 RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
 ```
 
 User:
 
-```
+```java
 Boolean              delete("me/followings/{contact_id}")             // /me/followings/{contact_id}
 Boolean              delete("users/{user_id}/followings/{contact_id}") // /users/{user_id}/followings/{contact_id}
 ```
 
 Track:
 
-```
+```java
 Boolean              delete("tracks/{track_id}")                      // /tracks/{track_id}
                      deleteTrack({track_id})
 
