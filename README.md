@@ -46,7 +46,7 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 ### GET
 
 ```java
-RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
+// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
 ```
 
 User:
@@ -137,7 +137,7 @@ ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks
 ### PUT
 
 ```java
-RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
+// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
 ```
 
 User:
@@ -159,7 +159,7 @@ Boolean              put("me/favorites/{track_id}")                   // /me/fav
 ### POST
 
 ```java
-RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
+// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
 ```
 
 Track:
@@ -179,7 +179,7 @@ Comment              post("tracks/{track_id}/comments", Comment comment)  // /tr
 ### DELETE
 
 ```java
-RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ─────────────────────────
+// RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ──────────────────────
 ```
 
 User:
@@ -236,7 +236,7 @@ me = soundcloud.putMe(me);
 System.out.println( me );
 ```
 
-Which sounds do you like? Show all your favorites:
+Which sound do you like? Show all your favorites:
 
 ```java
 User me = soundcloud.getMe();
