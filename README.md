@@ -357,11 +357,6 @@ comment = soundcloud.postCommentToTrack(70734856, comment);
 System.out.println(comment);
 ```
 
-## TODOs
-
-* Add unit testing, because the code is unstable.
-* Add more helpers, because string concatenation sucks.
-
 ## License
 
 The library is Open Source Software released under the [MIT License](https://raw.github.com/voidplus/soundcloud-java-library/master/MIT-LICENSE.txt). It's developed by [Darius Morawiec](http://voidplus.de).
