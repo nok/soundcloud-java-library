@@ -2,8 +2,6 @@
 
 Inofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
 
-> If you like the library and want to support my passion, feel free to make any amount of [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RNWX3MMZDU5W2).
-
 ## Dependencies
 
 Note: You need to put the latest dependent libraries in your CLASSPATH before compiling and running codes:
