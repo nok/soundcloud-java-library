@@ -33,10 +33,10 @@ SoundCloud soundcloud = new SoundCloud(
 The service of [Apigee](https://apigee.com/embed/console/soundcloud) is proper for learning and testing the official [SoundCloud API](http://developers.soundcloud.com/docs/api/reference). All API calls are mapped to REST methods:
 
 ```java
-public  get( String path [, String[] filters] )  <T>:T                // GET
-public  put( String path [, Object value] )  <T>:T                    // PUT
-public  post( String path, Object value )  <T>:T                      // POST
-public  delete( String path )  Boolean                                // DELETE
+public  get( String path [, String[] filters] )  <T>:T
+public  put( String path [, Object value] )  <T>:T
+public  post( String path, Object value )  <T>:T
+public  delete( String path )  Boolean
 ```
 
 ## REST
@@ -48,84 +48,84 @@ You can use the following API calls and/or helpers ("→" ⇔ HTTP 303 See Other
 User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```
-User                 get("me")                                        // /me
+User                 get("me")                                             // /me
                      getMe()
 
-ArrayList<User>      get("users")                                     // /users
+ArrayList<User>      get("users")                                          // /users
                      getUsers([Integer offset, Integer limit])
 
-User                 get("users/{contact_id}")                        // /users/{contact_id}
+User                 get("users/{contact_id}")                             // /users/{contact_id}
                      getUser({contact_id})
 
-ArrayList<User>      get("me/followings")                             // /me/followings
+ArrayList<User>      get("me/followings")                                  // /me/followings
                      getMeFollowing([Integer offset, Integer limit])
-User                 get("me/followings/{contact_id}")                // /me/followings/{contact_id}
-                     getMeFollowing({contact_id})                     // → /users/{contact_id}
+User                 get("me/followings/{contact_id}")                     // /me/followings/{contact_id}
+                     getMeFollowing({contact_id})                          // → /users/{contact_id}
 
-ArrayList<User>      get("me/followers")                              // /me/followers
+ArrayList<User>      get("me/followers")                                   // /me/followers
                      getMeFollowers([Integer offset, Integer limit])
-User                 get("me/followers/{contact_id}")                 // /me/followers/{contact_id}
-                     getMeFollower({contact_id})                      // → /users/{contact_id}
+User                 get("me/followers/{contact_id}")                      // /me/followers/{contact_id}
+                     getMeFollower({contact_id})                           // → /users/{contact_id}
 
-ArrayList<User>      get("groups/{group_id}/users")                   // /groups/{group_id}/users
-ArrayList<User>      get("groups/{group_id}/moderators")              // /groups/{group_id}/moderators
-ArrayList<User>      get("groups/{group_id}/members")                 // /groups/{group_id}/members
-ArrayList<User>      get("groups/{group_id}/contributors")            // /groups/{group_id}/contributors
-                                                                      // 2271 = SoundCloud Sweetness ;)
+ArrayList<User>      get("groups/{group_id}/users")                        // /groups/{group_id}/users
+ArrayList<User>      get("groups/{group_id}/moderators")                   // /groups/{group_id}/moderators
+ArrayList<User>      get("groups/{group_id}/members")                      // /groups/{group_id}/members
+ArrayList<User>      get("groups/{group_id}/contributors")                 // /groups/{group_id}/contributors
+                                                                           // 2271 = SoundCloud Sweetness ;)
 ```
 
 Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```
-Track                get("tracks/{track_id}")                         // /tracks/{track_id}
+Track                get("tracks/{track_id}")                              // /tracks/{track_id}
                      getTrack({track_id})
 
-ArrayList<Track>     get("tracks")                                    // /tracks
+ArrayList<Track>     get("tracks")                                         // /tracks
                      getTracks([Integer offset, Integer limit])
 
-ArrayList<Track>     get("me/tracks")                                 // /me/tracks
+ArrayList<Track>     get("me/tracks")                                      // /me/tracks
                      getMeTracks([Integer offset, Integer limit])
 
-ArrayList<Track>     get("me/favorites")                              // /me/favorites
+ArrayList<Track>     get("me/favorites")                                   // /me/favorites
                      getMeFavorites([Integer offset, Integer limit])
 
-ArrayList<Track>     get("groups/{group_id}/tracks")                  // /groups/{group_id}/tracks
+ArrayList<Track>     get("groups/{group_id}/tracks")                       // /groups/{group_id}/tracks
                      getTracksFromGroup({group_id})
 ```
 
 Playlist[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Playlist.java):
 
 ```
-Playlist             get("playlists/{playlist_id}")                   // /playlists/{playlist_id}
+Playlist             get("playlists/{playlist_id}")                        // /playlists/{playlist_id}
                      getPlaylist({playlist_id})
 
-ArrayList<Playlist>  get("playlists")                                 // /playlists
+ArrayList<Playlist>  get("playlists")                                      // /playlists
                      getPlaylists([Integer offset, Integer limit])
 
-ArrayList<PlayList>  get("me/playlists")                              // /me/playlists
+ArrayList<PlayList>  get("me/playlists")                                   // /me/playlists
                      getMePlaylists([Integer offset, Integer limit])
 ```
 
 Group[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Group.java):
 
 ```
-Group                get("groups/{group_id}")                         // /groups/{group_id}
+Group                get("groups/{group_id}")                              // /groups/{group_id}
                      getGroup({group_id})
 
-ArrayList<Group>     get("groups")                                    // /groups
+ArrayList<Group>     get("groups")                                         // /groups
                      getGroups([Integer offset, Integer limit])
 
-ArrayList<Group>     get("me/groups")                                 // /me/groups
+ArrayList<Group>     get("me/groups")                                      // /me/groups
                      getMeGroups([Integer offset, Integer limit])
 ```
 
 Comment[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```
-ArrayList<Comment>   get("me/comments")                               // /me/comments
+ArrayList<Comment>   get("me/comments")                                    // /me/comments
                      getMeComments([Integer offset, Integer limit])
 
-ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks/{track_id}/comments
+ArrayList<Comment>   get("tracks/{track_id}/comments")                     // /tracks/{track_id}/comments
                      getCommentsFromTrack({track_id})
 ```
 
@@ -134,16 +134,16 @@ ArrayList<Comment>   get("tracks/{track_id}/comments")                // /tracks
 User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```
-User                 put("me", User user)                             // /me
+User                 put("me", User user)                                  // /me
                      putMe(User user)
 ```
 
 Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```
-Track                put("tracks/{track_id}", Track track)            // /tracks/{track_id}
+Track                put("tracks/{track_id}", Track track)                 // /tracks/{track_id}
 
-Boolean              put("me/favorites/{track_id}")                   // /me/favorites/{track_id}
+Boolean              put("me/favorites/{track_id}")                        // /me/favorites/{track_id}
                      putFavoriteTrack({track_id})
 ```
 
@@ -152,40 +152,36 @@ Boolean              put("me/favorites/{track_id}")                   // /me/fav
 Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```
-Track                post("tracks", Track track))                     // /tracks
+Track                post("tracks", Track track))                          // /tracks
                      postTrack(Track track)
 ```
 
 Comment[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Comment.java):
 
 ```
-Comment              post("tracks/{track_id}/comments", Comment comment)  // /tracks/{track_id}/comments
+Comment              post("tracks/{track_id}/comments", Comment comment)   // /tracks/{track_id}/comments
                      postCommentToTrack({track_id}, Comment comment)
 ```
 
 ### DELETE
 
-```
-RESULT ───────────── METHOD ───────────────────────────────────────── API CALL ────────────────────────
-```
-
 User[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/User.java):
 
 ```
-Boolean              delete("me/followings/{contact_id}")             // /me/followings/{contact_id}
-Boolean              delete("users/{user_id}/followings/{contact_id}") // /users/{user_id}/followings/{contact_id}
+Boolean              delete("me/followings/{contact_id}")                  // /me/followings/{contact_id}
+Boolean              delete("users/{user_id}/followings/{contact_id}")     // /users/{user_id}/followings/{contact_id}
 ```
 
 Track[.java](https://github.com/voidplus/soundcloud-java-library/blob/master/src/de/voidplus/soundcloud/Track.java):
 
 ```
-Boolean              delete("tracks/{track_id}")                      // /tracks/{track_id}
+Boolean              delete("tracks/{track_id}")                           // /tracks/{track_id}
                      deleteTrack({track_id})
 
-Boolean              delete("me/favorites/{track_id}")                // /me/favorites/{track_id}
+Boolean              delete("me/favorites/{track_id}")                     // /me/favorites/{track_id}
                      deleteFavoriteTrack({track_id})
 
-Boolean              delete("users/{user_id}/favorites/{track_id}")   // /users/{user_id}/favorites/{track_id}
+Boolean              delete("users/{user_id}/favorites/{track_id}")        // /users/{user_id}/favorites/{track_id}
 ```
 
 ## Examples
