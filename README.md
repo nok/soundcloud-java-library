@@ -1,4 +1,4 @@
-# SoundCloud-Java-Library
+# SoundCloud-Java-Library [![Build Status](https://travis-ci.org/voidplus/soundcloud-java-library.png?branch=master)](https://travis-ci.org/voidplus/soundcloud-java-library)
 
 Inofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
 
