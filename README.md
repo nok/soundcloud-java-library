@@ -4,7 +4,7 @@ Inofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 ## Dependencies
 
-Note: You need to put the latest dependent libraries in your CLASSPATH before compiling and running codes:
+You just need to add the ```soundcloud_java_library-0.1.jar``` to your buildpath. It's a fat jar and includes the following dependent libraries:
 
 * [java-api-wrapper-1.1.2-all.jar](https://github.com/soundcloud/java-api-wrapper/) by SoundCloud
 * [google-gson-2.2.2](http://code.google.com/p/google-gson/) by Google
@@ -274,7 +274,6 @@ if(removing){
 }
 ```
 
-
 ### Track
 
 Upload a new track:
@@ -336,6 +335,38 @@ comment = soundcloud.postCommentToTrack(70734856, comment);
 // comment = soundcloud.post("tracks/70734856/comments", comment);
 
 System.out.println(comment);
+```
+
+### Search
+
+Search track:
+
+```java
+ArrayList<Track> result = soundcloud.findTrack("Chromatics");
+if(result!=null){
+    System.out.println("Tracks: "+result.size());
+    for(Track track:result){
+        System.out.println(track);
+    }
+}
+```
+
+Search user:
+
+```java
+ArrayList<User> result = soundcloud.findUser("damovi");
+if(result!=null){
+    System.out.println("Users: "+result.size());
+}
+```
+
+Search group:
+
+```java
+ArrayList<Group> result = soundcloud.findGroup("SoundCloud");
+if(result!=null){
+    System.out.println("Groups: "+result.size());
+}
 ```
 
 ## License
