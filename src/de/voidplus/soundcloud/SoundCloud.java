@@ -1,5 +1,6 @@
 package de.voidplus.soundcloud;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,12 +24,10 @@ import com.soundcloud.api.Token;
 
 public class SoundCloud {
     
-	public static final String VERSION = "0.1";
-	
-	
-	/* ---------------------------------------- */
-	
-	
+    
+    public static final String VERSION = "0.2";
+    
+    
     private enum Type {
         USER,
         TRACK,
@@ -45,9 +44,6 @@ public class SoundCloud {
     }
     
     
-    /* ---------------------------------------- */
-    
-    
     protected final String app_client_id;
     protected final String app_client_secret;
     protected File app_serial;
@@ -57,10 +53,6 @@ public class SoundCloud {
     
     protected JSONParser parser;
     protected Gson gson;
-    
-    
-    /* ---------------------------------------- */
-    
     
     
     /**
@@ -114,9 +106,6 @@ public class SoundCloud {
             e.printStackTrace();
         }
     }
-    
-    
-    /* ---------------------------------------- */
 
     
     /**
@@ -306,7 +295,7 @@ public class SoundCloud {
                                 .add(Params.Track.TAG_LIST,track.getTagList())
                                 .withFile(Params.Track.ASSET_DATA,new File(track.asset_data));
                     } else if(klass.equals("Comment")){
-                    	content = gson.toJson(value);
+                        content = gson.toJson(value);
                         content = "{\"comment\":"+content+"}";
                         resource = Request.to(api.replace(".json",""))
                                 .withContent(content, "application/json");
@@ -396,9 +385,6 @@ public class SoundCloud {
     }
     
     
-    /* ---------------------------------------- */
-    
-    
     /**
      * API access to GET (REST) data.
      * 
@@ -421,9 +407,6 @@ public class SoundCloud {
     }
     
     
-    /* ---------------------------------------- */
-    
-    
     /**
      * API access to POST (REST) new data.
      * 
@@ -434,8 +417,6 @@ public class SoundCloud {
         return this.api(api, Rest.POST, value, null);
     }
     
-    
-    /* ---------------------------------------- */
     
     /**
      * API access to PUT (REST) new data.
@@ -457,10 +438,7 @@ public class SoundCloud {
         return this.api(api, Rest.PUT, value, null);
     }
     
-    
-    /* ---------------------------------------- */
-    
-    
+
     /**
      * API access to DELETE (REST) data.
      * 
@@ -470,10 +448,7 @@ public class SoundCloud {
     public Boolean delete(String api){
         return (Boolean) this.api(api, Rest.DELETE, null, null);
     }
-    
-    
-    /* ---------------------------------------- */
-    
+
     
     /**
      * Get data about you.
@@ -514,7 +489,7 @@ public class SoundCloud {
      * @return
      */
     public User getMeFollowing(Integer contact_id){
-    	return this.get("me/followings/"+Integer.toString(contact_id));
+        return this.get("me/followings/"+Integer.toString(contact_id));
     }
     
     /**
@@ -547,7 +522,7 @@ public class SoundCloud {
      * @return
      */
     public User getMeFollower(Integer contact_id){
-    	return this.get("me/followers/"+Integer.toString(contact_id));
+        return this.get("me/followers/"+Integer.toString(contact_id));
     }
     
     /**
@@ -582,7 +557,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Track> getMeTracks(Integer offset, Integer limit){
-    	return this.get("me/tracks", new String[]{
+        return this.get("me/tracks", new String[]{
             "order","created_at",
             "limit",Integer.toString(limit),
             "offset",Integer.toString(offset)
@@ -595,7 +570,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Track> getMeTracks(){
-    	return this.getMeTracks(0, 50);
+        return this.getMeTracks(0, 50);
     }
     
     /**
@@ -617,7 +592,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Playlist> getMePlaylists(){
-    	return this.getMePlaylists(0,50);
+        return this.getMePlaylists(0,50);
     }
     
     /**
@@ -639,7 +614,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Group> getMeGroups(){
-    	return this.getMeGroups(0,50);
+        return this.getMeGroups(0,50);
     }
 
     /**
@@ -671,7 +646,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Comment> getCommentsFromTrack(Integer track_id){
-        return this.get("me/"+Integer.toString(track_id)+"comments");    	
+        return this.get("me/"+Integer.toString(track_id)+"comments");       
     }
     
     /**
@@ -681,7 +656,7 @@ public class SoundCloud {
      * @return
      */
     public Playlist getPlaylist(Integer playlist_id){
-    	return this.get("playlists/"+Integer.toString(playlist_id));
+        return this.get("playlists/"+Integer.toString(playlist_id));
     }
     
     /**
@@ -692,7 +667,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Playlist> getPlaylists(Integer offset, Integer limit){
-    	return this.get("playlists", new String[]{
+        return this.get("playlists", new String[]{
             "order","created_at",
             "limit",Integer.toString(limit),
             "offset",Integer.toString(offset)
@@ -705,7 +680,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Playlist> getPlaylists(){
-    	return this.getPlaylists(0, 50);
+        return this.getPlaylists(0, 50);
     }
     
     /**
@@ -715,7 +690,7 @@ public class SoundCloud {
      * @return
      */
     public User getUser(Integer contact_id){
-    	return this.get("users/"+Integer.toString(contact_id));
+        return this.get("users/"+Integer.toString(contact_id));
     }
 
     /**
@@ -726,7 +701,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<User> getUsers(Integer offset, Integer limit){
-    	return this.get("users", new String[]{
+        return this.get("users", new String[]{
             "order","created_at",
             "limit",Integer.toString(limit),
             "offset",Integer.toString(offset)
@@ -739,7 +714,19 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<User> getUsers(){
-    	return this.getUsers(0,50);
+        return this.getUsers(0,50);
+    }
+    
+    /**
+     * Simple user search.
+     * 
+     * @param username
+     * @return
+     */
+    public ArrayList<User> findUser(String username){
+        return this.get("users", new String[]{
+            "q",username
+        });
     }
     
     /**
@@ -749,7 +736,7 @@ public class SoundCloud {
      * @return
      */
     public Track getTrack(Integer track_id){
-    	return this.get("tracks/"+Integer.toString(track_id));
+        return this.get("tracks/"+Integer.toString(track_id));
     }
 
     /**
@@ -760,7 +747,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Track> getTracks(Integer offset, Integer limit){
-    	return this.get("tracks", new String[]{
+        return this.get("tracks", new String[]{
             "order","created_at",
             "limit",Integer.toString(limit),
             "offset",Integer.toString(offset)
@@ -773,7 +760,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Track> getTracks(){
-    	return this.getTracks(0, 50);
+        return this.getTracks(0, 50);
     }
     
     /**
@@ -783,7 +770,19 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Track> getTracksFromGroup(Integer group_id){
-    	return this.get("groups/"+Integer.toString(group_id)+"/tracks");
+        return this.get("groups/"+Integer.toString(group_id)+"/tracks");
+    }
+    
+    /**
+     * Simple track search.
+     * 
+     * @param title
+     * @return
+     */
+    public ArrayList<Track> findTrack(String title){
+        return this.get("tracks", new String[]{
+            "q",title
+        });
     }
     
     /**
@@ -793,7 +792,7 @@ public class SoundCloud {
      * @return
      */
     public Group getGroup(Integer id){
-    	return this.get("groups/"+Integer.toString(id));
+        return this.get("groups/"+Integer.toString(id));
     }
     
     /**
@@ -804,7 +803,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Group> getGroups(Integer offset, Integer limit){
-    	return this.get("groups", new String[]{
+        return this.get("groups", new String[]{
             "order","created_at",
             "limit",Integer.toString(limit),
             "offset",Integer.toString(offset)
@@ -817,7 +816,19 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Group> getGroups(){
-    	return this.getGroups(0, 50);
+        return this.getGroups(0, 50);
+    }
+    
+    /**
+     * Simple user search.
+     * 
+     * @param name
+     * @return
+     */
+    public ArrayList<Group> findGroup(String name){
+        return this.get("groups", new String[]{
+            "q",name
+        });
     }
     
     /**
@@ -827,7 +838,7 @@ public class SoundCloud {
      * @return
      */
     public User putMe(User user){
-    	return this.put("me", user);
+        return this.put("me", user);
     }
     
     /**
@@ -837,7 +848,7 @@ public class SoundCloud {
      * @return
      */
     public Boolean putFavoriteTrack(Integer track_id){
-    	return this.put("me/favorites/"+Integer.toString(track_id));
+        return this.put("me/favorites/"+Integer.toString(track_id));
     }
     
     /**
@@ -847,7 +858,7 @@ public class SoundCloud {
      * @return
      */
     public Track postTrack(Track track){
-    	return this.post("tracks", track);
+        return this.post("tracks", track);
     }
     
     /**
@@ -858,7 +869,7 @@ public class SoundCloud {
      * @return
      */
     public Comment postCommentToTrack(Integer track_id, Comment comment){
-    	return this.post("tracks/"+Integer.toString(track_id)+"/comments", comment);
+        return this.post("tracks/"+Integer.toString(track_id)+"/comments", comment);
     }
     
     /**
@@ -868,7 +879,7 @@ public class SoundCloud {
      * @return
      */
     public Boolean deleteTrack(Integer track_id){
-    	return this.delete("tracks/"+Integer.toString(track_id));
+        return this.delete("tracks/"+Integer.toString(track_id));
     }
     
     /**
@@ -878,7 +889,7 @@ public class SoundCloud {
      * @return
      */
     public Boolean deleteFavoriteTrack(Integer track_id){
-    	return this.delete("me/favorites/"+Integer.toString(track_id));
+        return this.delete("me/favorites/"+Integer.toString(track_id));
     }
     
 }
