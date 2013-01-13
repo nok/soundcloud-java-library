@@ -4,5 +4,6 @@
 .classpath
 .settings/
 bin/
-libraries/
 temp/
+data/
+src/developing/
