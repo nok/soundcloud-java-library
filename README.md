@@ -6,8 +6,8 @@ Inofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 You just need to add the ```soundcloud_java_library-0.1.jar``` to your buildpath. It's a fat jar and includes the following dependent libraries:
 
-* [java-api-wrapper-1.1.2-all.jar](https://github.com/soundcloud/java-api-wrapper/) by SoundCloud
-* [google-gson-2.2.2](http://code.google.com/p/google-gson/) by Google
+* [java-api-wrapper-1.2.0-all.jar](https://github.com/soundcloud/java-api-wrapper/) by [SoundCloud](https://github.com/soundcloud)
+* [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
 * [json-simple-1.1.1](http://code.google.com/p/json-simple/)
 
 ## Usage

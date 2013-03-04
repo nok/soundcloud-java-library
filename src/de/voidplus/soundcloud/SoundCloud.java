@@ -86,7 +86,7 @@ public class SoundCloud {
         this.gson = new Gson();
 
         if (app_serial.length() == 0) {
-            wrapper = new ApiWrapper(app_client_id, app_client_secret, null, null, Env.LIVE);
+            wrapper = new ApiWrapper(app_client_id, app_client_secret, null, null);
             try {
                 wrapper.toFile(app_serial);
             } catch (IOException e) {
