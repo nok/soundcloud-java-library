@@ -10,6 +10,22 @@ You just need to add the ```soundcloud_java_library-0.1.jar``` to your buildpath
 * [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
 * [json-simple-1.1.1](http://code.google.com/p/json-simple/)
 
+## Processing
+
+[Download](https://github.com/voidplus/soundcloud-java-library/blob/master/processing/SoundCloud.zip), unzip and put the extracted *SoundCloud* folder into the libraries folder of your Processing sketches. Reference and examples are included in the *SoundCloud* folder.
+
+Tested System:
+
+* OSX
+
+Processing Version:
+
+* 2.0b7
+* 2.0b8
+
+[Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users.
+
+
 ## Usage
 
 Add the compiled library to your classpath, import the library and create a new instance of the wrapper with your [application](http://soundcloud.com/you/apps) and personal [login](https://soundcloud.com/login/forgot) data:

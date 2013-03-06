@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <project name="build" basedir="." default="delete_dirs">
 
-	<property name="library.name" value="soundcloud_java_library" />
+	<property name="library.name" value="SoundCloud" />
 	<property name="library.version" value="0.1" />
 	
 	<property name="build" value="build" />
 	<property name="build.classes" value="${build}/classes" />
 	<property name="build.jar" value="${build}/jar" />
-	<property name="jar.name" value="${library.name}-${library.version}" />
+	<property name="jar.name" value="${library.name}" />
 
 	<path id="dependent_libraries">
 		<fileset dir="dependent_libraries">
@@ -36,6 +36,7 @@
 
 	<target name="delete_dirs" depends="jar">
 		<copy file="${build.jar}/${jar.name}.jar" todir="library" />
+		<copy file="${build.jar}/${jar.name}.jar" todir="processing/SoundCloud/library" />
 		<delete dir="${build}" />
 	</target>
 
