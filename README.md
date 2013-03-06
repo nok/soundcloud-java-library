@@ -10,21 +10,6 @@ You just need to add the ```soundcloud_java_library-0.1.jar``` to your buildpath
 * [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
 * [json-simple-1.1.1](http://code.google.com/p/json-simple/)
 
-## Processing
-
-[Download](https://github.com/voidplus/soundcloud-java-library/raw/master/processing/SoundCloud.zip), unzip and put the extracted *SoundCloud* folder into the libraries folder of your Processing sketches. Reference and examples are included in the *SoundCloud* folder.
-
-Tested System:
-
-* OSX
-
-Processing Version:
-
-* 2.0b7
-* 2.0b8
-
-[Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users.
-
 
 ## Usage
 
@@ -52,6 +37,71 @@ public  put( String path [, Object value] )  <T>:T
 public  post( String path, Object value )  <T>:T
 public  delete( String path )  Boolean
 ```
+
+## Processing
+
+### Installation
+
+[Download](https://github.com/voidplus/soundcloud-java-library/raw/master/processing/SoundCloud.zip), unzip and put the extracted *SoundCloud* folder into the libraries folder of your Processing sketches. Reference and examples are included in the *SoundCloud* folder.
+
+### Tested
+
+System:
+
+* OSX
+
+Processing Version:
+
+* 2.0b7
+* 2.0b8
+
+### Usage
+
+I recommend to use the library with Minim. [Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users. Here you see the first example:
+
+```java
+import de.voidplus.soundcloud.*;
+import ddf.minim.*;
+
+SoundCloud soundcloud;
+Minim minim;
+AudioPlayer player;
+
+void setup(){
+  
+  // http://soundcloud.com/you/apps for APP_CLIENT_ID and APP_CLIENT_SECRET
+  soundcloud = new SoundCloud("APP_CLIENT_ID", "APP_CLIENT_SECRET", "LOGIN_NAME", "LOGIN_PASS");
+  
+  // show user details
+  User me = soundcloud.get("me");
+  println(me);
+  
+  // play the first track of search
+  ArrayList<Track> result = soundcloud.findTrack("Chromatics");
+  Track first_track;
+  if(result!=null){
+    println("Tracks: "+result.size());
+
+    minim = new Minim(this);  
+    player = minim.loadFile(result.get(0).getStreamUrl());
+    player.play();
+  }
+  
+  minim = new Minim(this);
+}
+
+void draw(){}
+
+void stop(){
+  player.close();
+  minim.stop();
+}
+```
+
+### Dependencies
+
+None.
+
 
 ## REST
 
