@@ -78,7 +78,6 @@ void setup(){
   
   // play the first track of search
   ArrayList<Track> result = soundcloud.findTrack("Chromatics");
-  Track first_track;
   if(result!=null){
     println("Tracks: "+result.size());
 
