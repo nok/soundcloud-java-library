@@ -25,7 +25,7 @@ category = Data
 # repeating the name of your library here. Also, avoid saying anything redundant 
 # like mentioning that it's a library. This should start with a capitalized 
 # letter, and end with a period.
-sentence = Inofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
+sentence = Unofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
 
 # Additional information suitable for the Processing website. The value of
 # 'sentence' always will be prepended, so you should start by writing the
