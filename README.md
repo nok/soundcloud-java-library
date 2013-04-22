@@ -4,9 +4,9 @@ Unofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 ## Dependencies
 
-You just need to add the ```soundcloud_java_library-0.1.jar``` to your buildpath. It's a fat jar and includes the following dependent libraries:
+You just need to add the ```SoundCloud.jar``` to your buildpath. It's a fat jar and includes the following dependent libraries:
 
-* [java-api-wrapper-1.2.0-all.jar](https://github.com/soundcloud/java-api-wrapper/) by [SoundCloud](https://github.com/soundcloud)
+* [java-api-wrapper-1.3.0-all.jar](https://github.com/soundcloud/java-api-wrapper/) (```gradle jarAll```) by [SoundCloud](https://github.com/soundcloud)
 * [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
 * [json-simple-1.1.1](http://code.google.com/p/json-simple/)
 
@@ -57,7 +57,7 @@ Processing Version:
 
 ### Usage
 
-I recommend to use the library with Minim. [Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users. Here you see the first example:
+I recommend to use the library with Minim. [Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users. An example:
 
 ```java
 import de.voidplus.soundcloud.*;
@@ -436,30 +436,4 @@ if(result!=null){
 
 ## License
 
-The library is Open Source Software released under the [MIT License](https://raw.github.com/voidplus/soundcloud-java-library/master/MIT-LICENSE.txt). It's developed by [Darius Morawiec](http://voidplus.de).
-
-```
-The MIT License
-
-Copyright (c) 2011, SoundCloud Ltd., Jan Berkel
-Portions Copyright (c) 2010 Xtreme Labs and Pivotal Labs
-Portions Copyright (c) 2009 urbanSTEW
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
+[MIT License by SoundCloud](https://raw.github.com/soundcloud/java-api-wrapper/master/LICENSE). The library is Open Source Software released under the [MIT License](https://raw.github.com/voidplus/soundcloud-java-library/master/MIT-LICENSE.txt). It's developed by [Darius Morawiec](http://voidplus.de).
