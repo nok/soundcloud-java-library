@@ -32,75 +32,11 @@ SoundCloud soundcloud = new SoundCloud(
 The service of [Apigee](https://apigee.com/embed/console/soundcloud) is proper for learning and testing the official [SoundCloud API](http://developers.soundcloud.com/docs/api/reference). All API calls are mapped to REST methods:
 
 ```java
-public  get( String path [, String[] filters] )  <T>:T
-public  put( String path [, Object value] )  <T>:T
-public  post( String path, Object value )  <T>:T
-public  delete( String path )  Boolean
+public  get( String path [, String[] filters] )  <T>:T   // GET
+public  put( String path [, Object value] )  <T>:T       // PUT
+public  post( String path, Object value )  <T>:T         // POST
+public  delete( String path )  Boolean                   // DELETE
 ```
-
-## Processing
-
-### Installation
-
-[Download](https://github.com/voidplus/soundcloud-java-library/raw/master/processing/SoundCloud.zip), unzip and put the extracted *SoundCloud* folder into the libraries folder of your Processing sketches. Reference and examples are included in the *SoundCloud* folder.
-
-### Tested
-
-System:
-
-* OSX
-
-Processing Version:
-
-* 2.0b7
-* 2.0b8
-
-### Usage
-
-I recommend to use the library with Minim. [Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users. An example:
-
-```java
-import de.voidplus.soundcloud.*;
-import ddf.minim.*;
-
-SoundCloud soundcloud;
-Minim minim;
-AudioPlayer player;
-
-void setup(){
-  
-  // http://soundcloud.com/you/apps for APP_CLIENT_ID and APP_CLIENT_SECRET
-  soundcloud = new SoundCloud("APP_CLIENT_ID", "APP_CLIENT_SECRET", "LOGIN_NAME", "LOGIN_PASS");
-  
-  // show user details
-  User me = soundcloud.get("me");
-  println(me);
-  
-  // play the first track of search
-  ArrayList<Track> result = soundcloud.findTrack("Chromatics");
-  if(result!=null){
-    println("Tracks: "+result.size());
-
-    minim = new Minim(this);  
-    player = minim.loadFile(result.get(0).getStreamUrl());
-    player.play();
-  }
-  
-  minim = new Minim(this);
-}
-
-void draw(){}
-
-void stop(){
-  player.close();
-  minim.stop();
-}
-```
-
-### Dependencies
-
-None.
-
 
 ## REST
 
@@ -433,6 +369,79 @@ if(result!=null){
     System.out.println("Groups: "+result.size());
 }
 ```
+
+
+---
+
+## Processing
+
+### Installation
+
+[Download](https://github.com/voidplus/soundcloud-java-library/raw/master/processing/SoundCloud.zip), unzip and put the extracted *SoundCloud* folder into the libraries folder of your Processing sketches. Reference and examples are included in the *SoundCloud* folder.
+
+### Tested
+
+System:
+
+* OSX
+
+Processing Version:
+
+* 2.0b7
+* 2.0b8
+* 2.0b9
+
+### Usage
+
+I recommend to use the library with Minim. [Minim](http://code.compartmental.net/tools/minim/) ([GitHub](https://github.com/ddf/Minim)) uses JavaSound to provide an easy-to-use audio library while still providing flexibility for more advanced users. An example:
+
+```java
+import de.voidplus.soundcloud.*;
+import ddf.minim.*;
+
+SoundCloud soundcloud;
+Minim minim;
+AudioPlayer player;
+
+void setup(){
+  
+  // http://soundcloud.com/you/apps for APP_CLIENT_ID and APP_CLIENT_SECRET
+  soundcloud = new SoundCloud("APP_CLIENT_ID", "APP_CLIENT_SECRET", "LOGIN_NAME", "LOGIN_PASS");
+  
+  // show user details
+  User me = soundcloud.get("me");
+  println(me);
+  
+  // play the first track of search
+  ArrayList<Track> result = soundcloud.findTrack("Chromatics");
+  if(result!=null){
+    println("Tracks: "+result.size());
+
+    minim = new Minim(this);  
+    player = minim.loadFile(result.get(0).getStreamUrl());
+    player.play();
+  }
+  
+  minim = new Minim(this);
+}
+
+void draw(){}
+
+void stop(){
+  player.close();
+  minim.stop();
+}
+```
+
+### Dependencies
+
+None.
+
+---
+
+## Questions?
+
+Don't be shy and feel free to contact me via [Twitter](https://twitter.com/darius_morawiec).
 
 ## License
 
