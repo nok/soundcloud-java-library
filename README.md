@@ -21,7 +21,25 @@ import de.voidplus.soundcloud.*;
 ```java
 SoundCloud soundcloud = new SoundCloud(
     "APP_CLIENT_ID",
+    "APP_CLIENT_SECRET"
+);
+
+// Or, if you need any permissions:
+
+SoundCloud soundcloud = new SoundCloud(
+    "APP_CLIENT_ID",
     "APP_CLIENT_SECRET",
+    "LOGIN_NAME",
+    "LOGIN_PASS"
+);
+
+// Or:
+
+SoundCloud soundcloud = new SoundCloud(
+    "APP_CLIENT_ID",
+    "APP_CLIENT_SECRET"
+);
+soundcloud.login(
     "LOGIN_NAME",
     "LOGIN_PASS"
 );
@@ -387,9 +405,10 @@ System:
 
 Processing Version:
 
-* 2.0b7
-* 2.0b8
+* 2.0.1
 * 2.0b9
+* 2.0b8
+* 2.0b7
 
 ### Usage
 
@@ -406,7 +425,10 @@ AudioPlayer player;
 void setup(){
   
   // http://soundcloud.com/you/apps for APP_CLIENT_ID and APP_CLIENT_SECRET
-  soundcloud = new SoundCloud("APP_CLIENT_ID", "APP_CLIENT_SECRET", "LOGIN_NAME", "LOGIN_PASS");
+  soundcloud = new SoundCloud("APP_CLIENT_ID", "APP_CLIENT_SECRET");
+  
+  // If you need any permissions:
+  // soundcloud.login("LOGIN_NAME", "LOGIN_PASS");
   
   // show user details
   User me = soundcloud.get("me");
@@ -441,7 +463,7 @@ None.
 
 ## Questions?
 
-Don't be shy and feel free to contact me via [Twitter](https://twitter.com/darius_morawiec).
+Don't be shy and feel free to contact me via [Twitter](http://twitter.voidplus.de).
 
 ## License
 

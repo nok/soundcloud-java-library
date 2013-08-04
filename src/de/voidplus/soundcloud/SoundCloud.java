@@ -15,7 +15,6 @@ import com.google.gson.Gson;
 
 import com.soundcloud.api.ApiWrapper;
 import com.soundcloud.api.Endpoints;
-import com.soundcloud.api.Env;
 import com.soundcloud.api.Http;
 import com.soundcloud.api.Params;
 import com.soundcloud.api.Request;
@@ -25,7 +24,7 @@ import com.soundcloud.api.Token;
 public class SoundCloud {
     
     
-    public static final String VERSION = "0.1.1";
+    public static final String VERSION = "0.1.3";
     
     
     private enum Type {
@@ -54,7 +53,7 @@ public class SoundCloud {
     protected JSONParser parser;
     protected Gson gson;
     
-    
+
     /**
      * Constructor of the SoundCloud wrapper, which creates the API wrapper and generates the Access Token.
      * 
@@ -63,7 +62,7 @@ public class SoundCloud {
      * @param _login_name           SoundCloud Login Name
      * @param _login_password       SoundCloud Login Pass
      */
-    public SoundCloud( String _app_client_id, String _app_client_secret, String _login_name, String _login_password )
+    public SoundCloud( String _app_client_id, String _app_client_secret )
     {
         this.app_client_id = _app_client_id;
         this.app_client_secret = _app_client_secret;
@@ -99,14 +98,39 @@ public class SoundCloud {
                 e.printStackTrace();
             }
         }
+        wrapper.setToken(null);
         wrapper.setDefaultContentType("application/json");
+    }
+    
+
+    /**
+     * Constructor of the SoundCloud wrapper, which creates the API wrapper and generates the Access Token.
+     * 
+     * @param _app_client_id        Application Client ID
+     * @param _app_client_secret    Application Client Secret
+     */
+    public SoundCloud( String _app_client_id, String _app_client_secret, String _login_name, String _login_password )
+    {
+        this(_app_client_id, _app_client_secret);
+        this.login(_login_name, _login_password);
+    }
+    
+    
+    /**
+     * Login to get a valid token.
+     * 
+     * @param _login_name           SoundCloud Login Name
+     * @param _login_password       SoundCloud Login Pass
+     * @return
+     */
+    public void login( String _login_name, String _login_password ){
         try {
             this.token = wrapper.login(_login_name, _login_password, Token.SCOPE_NON_EXPIRING);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    
     
     /**
      * The core of the library.
@@ -183,7 +207,12 @@ public class SoundCloud {
                     }
                     api += (filters[i] + "=" + filters[i + 1]);
                 }
+                if(this.token == null){
+                	api += ("&consumer_key="+this.app_client_id);
+                }
             }
+        } else {
+        	api += "?consumer_key="+this.app_client_id;
         }
         
         try {
@@ -194,7 +223,7 @@ public class SoundCloud {
             
             switch(rest){           
                 case GET:
-                    response = wrapper.get( Request.to(api) );
+                    response = wrapper.get(Request.to(api));
                     
                     if(response.getStatusLine().getStatusCode()==303){ // recursive better?
                         // System.out.println( "303: "+response.getFirstHeader("Location").getValue() );
@@ -365,8 +394,6 @@ public class SoundCloud {
                     } else{
                         System.err.println("Invalid status received: " + response.getStatusLine());
                     }
-                    
-                    
                     
                 break;
                 case DELETE:
