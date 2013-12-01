@@ -6,7 +6,7 @@ Unofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 You just need to add the ```SoundCloud.jar``` to your buildpath. It's a fat jar and includes the following dependent libraries:
 
-* [java-api-wrapper-1.3.0-all.jar](https://github.com/soundcloud/java-api-wrapper/) (```gradle jarAll```) by [SoundCloud](https://github.com/soundcloud)
+* [java-api-wrapper-1.3.1-all.jar](https://github.com/soundcloud/java-api-wrapper/) (```gradle jarAll```) by [SoundCloud](https://github.com/soundcloud)
 * [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
 * [json-simple-1.1.1](http://code.google.com/p/json-simple/)
 

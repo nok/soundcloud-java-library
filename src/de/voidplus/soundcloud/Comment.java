@@ -11,14 +11,8 @@ public class Comment {
     private String uri;
     private User user;
 
-    public Comment(String body, Integer timestamp)
+    public Comment()
     {
-        this.setBody(body);
-        this.setTimestamp(timestamp);
-    }
-    public Comment(String body)
-    {
-        this(body, null);
     }
 
     public Integer getId() {

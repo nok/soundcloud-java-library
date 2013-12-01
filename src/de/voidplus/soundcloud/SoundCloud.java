@@ -24,7 +24,7 @@ import com.soundcloud.api.Token;
 public class SoundCloud {
     
     
-    public static final String VERSION = "0.1.3";
+    public static final String VERSION = "0.1.4";
     
     
     private enum Type {
@@ -673,7 +673,7 @@ public class SoundCloud {
      * @return
      */
     public ArrayList<Comment> getCommentsFromTrack(Integer track_id){
-        return this.get("me/"+Integer.toString(track_id)+"comments");       
+        return this.get("tracks/"+Integer.toString(track_id)+"/comments");       
     }
     
     /**
