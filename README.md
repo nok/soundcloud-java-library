@@ -3,9 +3,9 @@
 Unofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
 
 
-## Important notice
+## IMPORTANT NOTICE
 
-[SoundCloud](https://github.com/soundcloud/) drop the support for the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper), which is an important primary dependency. Nevertheless I will try to support that library.
+[SoundCloud](https://github.com/soundcloud/) drop the support for the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper), which is an important primary dependency. So I can't fix deep bugs or implement new features.
 
 > Unfortunately, we decided to discontinue support for this project; SoundCloud will no longer accept pull requests or make public releases of java-api-wrapper. If you're using java-api-wrapper in one of your projects, we suggest you fork the project in order to perform any necessary maintenance.
 
