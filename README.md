@@ -306,11 +306,14 @@ if(removing){
 Upload a new track:
 
 ```java
-Track track = soundcloud.postTrack(new Track("titel of the song", "path/to/file.mp3"));
-// OR
-// Track track = soundcloud.post("tracks", new Track("titel of the song!", "path/to/file.mp3"));
+Track localTrack = new Track("title of the song", "path/to/file.mp3");
 
-System.out.println(track.getTitle()+" (#"+track.getId()+")");
+// we need to specify at least one tag or the soundcloud api wrapper will throw excepction
+localTrack.setTagList("mytag");
+
+Track scTrack = soundcloud.postTrack(localTrack);
+
+System.out.println(scTrack.getTitle()+" (#"+scTrack.getId()+")");
 ```
 
 Delete a track (Bad example, because we love your music!):
