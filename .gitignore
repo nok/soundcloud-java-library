@@ -1,0 +1,19 @@
+# os files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.svn
+._*
+.Spotlight-V100
+.Trashes
+
+# eclipse
+.metadata
+.settings
+
+# java
+.classpath
+
+# project
+data
+src/test/java
