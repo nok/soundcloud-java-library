@@ -35,13 +35,13 @@ Unofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 ## Dependencies
 
-Open and read the [pom.xml file](workspace/de.voidplus.hdm.pia/pom.xml) for all necessary dependencies.
+Open and read the [pom.xml file](pom.xml) for all necessary dependencies.
 
 There are several internal dependencies:
 
 - [java-api-wrapper-1.3.1-all.jar](https://github.com/soundcloud/java-api-wrapper/) (```gradle jarAll```) by [SoundCloud](https://github.com/soundcloud)
-- [google-gson-2.2.2](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
-- [json-simple-1.1.1](http://code.google.com/p/json-simple/)
+- [com.google.code.gson](http://code.google.com/p/google-gson/) by [Google](https://github.com/google)
+- [com.googlecode.json-simple](http://code.google.com/p/json-simple/)
 
 
 ## Usage
