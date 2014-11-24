@@ -16,4 +16,5 @@ Desktop.ini
 
 # project
 data
-src/test/java
+src/test/java/de/voidplus/soundcloud/Settings.java
+target/test-classes/de/voidplus/soundcloud/Settings.class
