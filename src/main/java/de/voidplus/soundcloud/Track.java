@@ -245,7 +245,7 @@ public class Track {
     {
         if(this.streamable!=null && this.stream_url!=null){
             if(this.streamable==true && !this.stream_url.equals("")){
-                String stream_url = this.stream_url+= "/?consumer_key="+this.sc.app_client_id;
+                String stream_url = this.stream_url + "/?consumer_key="+this.sc.app_client_id;
                 stream_url = stream_url.replace("https://", "http://");
                 HttpResponse data = null;
                 try {
