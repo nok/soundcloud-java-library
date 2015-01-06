@@ -26,7 +26,7 @@ import com.soundcloud.api.Token;
 public class SoundCloud {
     
     
-    public static final String VERSION = "0.1.5";
+    public static final String VERSION = "0.2.0";
     
     
     private enum Type {
