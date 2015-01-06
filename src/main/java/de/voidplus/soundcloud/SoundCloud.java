@@ -4,6 +4,8 @@ package de.voidplus.soundcloud;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -217,7 +219,7 @@ public class SoundCloud {
                                         ArrayList<User> users = new ArrayList<User>();
                                         for (int i = 0, l = data.size(); i < l; i++) {
                                             String tuple = data.get(i).toString();                                  
-                                            User user = gson.fromJson(tuple, User.class);
+                                            User user = gson.fromJson(replaceJsonsBlank(tuple), User.class);
                                             users.add(user);
                                         }
                                         return (T) users;
@@ -225,7 +227,7 @@ public class SoundCloud {
                                         ArrayList<Track> tracks = new ArrayList<Track>();
                                         for (int i = 0, l = data.size(); i < l; i++) {
                                             String tuple = data.get(i).toString();
-                                            Track track = gson.fromJson(tuple, Track.class);
+                                            Track track = gson.fromJson(replaceJsonsBlank(tuple), Track.class);
                                             track.setSoundCloud(this);
                                             tracks.add(track);
                                         }
@@ -234,7 +236,7 @@ public class SoundCloud {
                                         ArrayList<Playlist> playlists = new ArrayList<Playlist>();
                                         for (int i = 0, l = data.size(); i < l; i++) {
                                             String tuple = data.get(i).toString();
-                                            Playlist playlist = gson.fromJson(tuple, Playlist.class);
+                                            Playlist playlist = gson.fromJson(replaceJsonsBlank(tuple), Playlist.class);
                                             playlists.add(playlist);
                                         }
                                         return (T) playlists;
@@ -242,7 +244,7 @@ public class SoundCloud {
                                         ArrayList<Comment> comments = new ArrayList<Comment>();
                                         for (int i = 0, l = data.size(); i < l; i++) {
                                             String tuple = data.get(i).toString();
-                                            Comment comment = gson.fromJson(tuple, Comment.class);
+                                            Comment comment = gson.fromJson(replaceJsonsBlank(tuple), Comment.class);
                                             comments.add(comment);
                                         }
                                         return (T) comments;
@@ -250,7 +252,7 @@ public class SoundCloud {
                                         ArrayList<Group> groups = new ArrayList<Group>();
                                         for (int i = 0, l = data.size(); i < l; i++) {
                                             String tuple = data.get(i).toString();
-                                            Group group = gson.fromJson(tuple, Group.class);
+                                            Group group = gson.fromJson(replaceJsonsBlank(tuple), Group.class);
                                             groups.add(group);
                                         }
                                         return (T) groups;
@@ -263,20 +265,20 @@ public class SoundCloud {
                             
                             switch(type){
                                 case USER:
-                                    User user = gson.fromJson(json, User.class);
+                                    User user = gson.fromJson(replaceJsonsBlank(json), User.class);
                                     return (T) user;
                                 case TRACK:
-                                    Track track = gson.fromJson(json, Track.class);
+                                    Track track = gson.fromJson(replaceJsonsBlank(json), Track.class);
                                     track.setSoundCloud(this);
                                     return (T) track;
                                 case PLAYLIST:
-                                    Playlist playlist = gson.fromJson(json, Playlist.class);
+                                    Playlist playlist = gson.fromJson(replaceJsonsBlank(json), Playlist.class);
                                     return (T) playlist;
                                 case COMMENT:
-                                    Comment comment = gson.fromJson(json, Comment.class);
+                                    Comment comment = gson.fromJson(replaceJsonsBlank(json), Comment.class);
                                     return (T) comment;
                                 case GROUP:
-                                    Group group = gson.fromJson(json, Group.class);
+                                    Group group = gson.fromJson(replaceJsonsBlank(json), Group.class);
                                     return (T) group;
                                 default: return null;
                             }
@@ -312,11 +314,11 @@ public class SoundCloud {
                         String json = (String)(Http.formatJSON(Http.getString(response))).trim();
                         switch(type){
                             case TRACK:
-                                Track track = gson.fromJson(json, Track.class);
+                                Track track = gson.fromJson(replaceJsonsBlank(json), Track.class);
                                 track.setSoundCloud(this);
                                 return (T) track;
                             case COMMENT:
-                                Comment comment = gson.fromJson(json, Comment.class);
+                                Comment comment = gson.fromJson(replaceJsonsBlank(json), Comment.class);
                                 return (T) comment;
                             default: return null;
                         }
@@ -355,10 +357,10 @@ public class SoundCloud {
                         
                         switch(type){
                             case USER:
-                                User user = gson.fromJson(json, User.class);
+                                User user = gson.fromJson(replaceJsonsBlank(json), User.class);
                                 return (T) user;
                             case TRACK:
-                                Track track = gson.fromJson(json, Track.class);
+                                Track track = gson.fromJson(replaceJsonsBlank(json), Track.class);
                                 track.setSoundCloud(this);
                                 return (T) track;
                             default: return null;
@@ -891,6 +893,12 @@ public class SoundCloud {
      */
     public Boolean deleteFavoriteTrack(Integer track_id){
         return this.delete("me/favorites/"+Integer.toString(track_id));
+    }
+
+    private String replaceJsonsBlank(String string) {
+        Pattern pattern = Pattern.compile(":(?: +)?\"\"");
+        Matcher matcher = pattern.matcher(string);
+        return matcher.replaceAll(":null");
     }
     
 }
