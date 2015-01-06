@@ -259,7 +259,7 @@ public class Track {
         return null;
     }
 
-    protected void setSoundCloud(SoundCloud _sc)
+    public void setSoundCloud(SoundCloud _sc)
     {
         this.sc = _sc;
     }
