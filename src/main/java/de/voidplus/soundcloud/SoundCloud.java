@@ -45,8 +45,7 @@ public class SoundCloud {
     
     protected final String app_client_id;
     protected final String app_client_secret;
-    protected File app_serial;
-    
+
     protected Token token;
     protected ApiWrapper wrapper;
     
@@ -67,37 +66,10 @@ public class SoundCloud {
         this.app_client_id = _app_client_id;
         this.app_client_secret = _app_client_secret;
         
-        File data_dir = new File("."+File.separator+"data");
-        this.app_serial = new File(data_dir,"serial.ser");
-        
-        if(!data_dir.exists()){
-            data_dir.mkdirs();
-        }
-        if(!app_serial.exists()){
-            try {
-                app_serial.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        
         this.parser = new JSONParser();
         this.gson = new Gson();
 
-        if (app_serial.length() == 0) {
-            wrapper = new ApiWrapper(app_client_id, app_client_secret, null, null);
-            try {
-                wrapper.toFile(app_serial);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                wrapper = ApiWrapper.fromFile(app_serial);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        wrapper = new ApiWrapper(app_client_id, app_client_secret, null, null);
         wrapper.setToken(null);
         wrapper.setDefaultContentType("application/json");
     }
