@@ -424,11 +424,17 @@ if(result!=null){
 ```
 
 
-## Processing
+## Questions?
 
-You can find the **SoundCloud for Processing** library in a [separate repository](https://github.com/nok/soundcloud-processing). That library is the core dependency of it.
+Don't be shy and feel free to contact me on Twitter: [@darius_morawiec](https://twitter.com/darius_morawiec)
 
 
 ## License
 
 [MIT License by SoundCloud](https://raw.github.com/soundcloud/java-api-wrapper/master/LICENSE). The library is Open Source Software released under the [MIT License](MIT-LICENSE.txt).
+
+---
+
+## Processing
+
+You can find the **SoundCloud for Processing** library in a [separate repository](https://github.com/nok/soundcloud-processing). That library is the core dependency of it.
