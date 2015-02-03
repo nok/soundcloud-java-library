@@ -24,13 +24,13 @@ Unofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 ## Notice
 
-**SoundCloud [dropped the support](https://github.com/soundcloud/java-api-wrapper#important-notice) for the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper), which is a primary dependency. If there is a bug in that dependency, we could just code ugly workarounds.**
+**SoundCloud [dropped the support](https://github.com/soundcloud/java-api-wrapper#important-notice) for the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper), which is a primary dependency.**
 
 
 ## Download
 
-- [soundcloud-0.1.5-jar-with-dependencies.jar](target/soundcloud-0.1.5-jar-with-dependencies.jar?raw=true) (see the list of [dependencies](#dependencies))
-- [soundcloud-0.1.5.jar](target/soundcloud-0.1.5.jar?raw=true)
+- [soundcloud-0.2.0-jar-with-dependencies.jar](target/soundcloud-0.2.0-jar-with-dependencies.jar?raw=true) (see the list of [dependencies](#dependencies))
+- [soundcloud-0.2.0.jar](target/soundcloud-0.2.0.jar?raw=true)
 
 
 ## Dependencies
@@ -423,16 +423,12 @@ if(result!=null){
 }
 ```
 
+
 ## Processing
 
-You can find the **SoundCloud for Processing** library in a [separate repository](https://github.com/voidplus/soundcloud-processing). That library is the core dependency of it.
-
-
-## Questions?
-
-Don't be shy and feel free to contact me via [Twitter](http://twitter.voidplus.de).
+You can find the **SoundCloud for Processing** library in a [separate repository](https://github.com/nok/soundcloud-processing). That library is the core dependency of it.
 
 
 ## License
 
-[MIT License by SoundCloud](https://raw.github.com/soundcloud/java-api-wrapper/master/LICENSE). The library is Open Source Software released under the [MIT License](https://raw.github.com/voidplus/soundcloud-java-library/master/MIT-LICENSE.txt). It's developed by [Darius Morawiec](http://voidplus.de).
+[MIT License by SoundCloud](https://raw.github.com/soundcloud/java-api-wrapper/master/LICENSE). The library is Open Source Software released under the [MIT License](MIT-LICENSE.txt).
