@@ -20,3 +20,4 @@ src/test/java/de/voidplus/soundcloud/Settings.java
 target/test-classes/
 target/classes/
 target/surefire-reports/
+/target/
