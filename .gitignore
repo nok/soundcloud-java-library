@@ -7,6 +7,9 @@ Desktop.ini
 .Spotlight-V100
 .Trashes
 
+# java
+.classpath
+
 # eclipse
 .metadata
 .settings
@@ -22,13 +25,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-# java
-.classpath
-
 # project
-data
+target/
+!target/*.jar
+
+# sensitive env settings
 src/test/java/de/voidplus/soundcloud/Settings.java
-target/test-classes/
-target/classes/
-target/surefire-reports/
-/target/
