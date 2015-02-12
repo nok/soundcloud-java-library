@@ -60,8 +60,6 @@ public class SoundCloud {
      * 
      * @param _app_client_id        Application Client ID
      * @param _app_client_secret    Application Client Secret
-     * @param _login_name           SoundCloud Login Name
-     * @param _login_password       SoundCloud Login Pass
      */
     public SoundCloud( String _app_client_id, String _app_client_secret )
     {
@@ -80,8 +78,8 @@ public class SoundCloud {
     /**
      * Constructor of the SoundCloud wrapper, which creates the API wrapper and generates the Access Token.
      * 
-     * @param _app_client_id        Application Client ID
-     * @param _app_client_secret    Application Client Secret
+     * @param _app_client_id        Application client ID
+     * @param _app_client_secret    Application client secret
      */
     public SoundCloud( String _app_client_id, String _app_client_secret, String _login_name, String _login_password )
     {
@@ -93,9 +91,9 @@ public class SoundCloud {
     /**
      * Login to get a valid token.
      * 
-     * @param _login_name           SoundCloud Login Name
-     * @param _login_password       SoundCloud Login Pass
-     * @return
+     * @param _login_name           SoundCloud login name
+     * @param _login_password       SoundCloud login pass
+     * @return                      Boolean state of login
      */
     public boolean login( String _login_name, String _login_password ){
         try {
@@ -106,19 +104,21 @@ public class SoundCloud {
         }
         return true;
     }
-    
-    
+
+
     /**
      * The core of the library.
-     * 
+     *
      * @param api
      * @param rest
      * @param value
      * @param filters
+     * @param <T>
      * @return
      */
     private <T> T api(String api, Rest rest, Object value, String[] filters)
     {
+        // TODO: create separate url to prepare api string
         if (api.length() > 0) {
             if (api.startsWith("/") == false) {
                 api = "/" + api;
@@ -133,7 +133,8 @@ public class SoundCloud {
         } else {
             return null;
         }
-        
+
+        // TODO: create separate method to get type
         // https://apigee.com/embed/console/soundcloud
         Type type = null;
         if (
@@ -173,7 +174,8 @@ public class SoundCloud {
         if (type == null) {
             return null;
         }
-        
+
+        // TODO: create separate method to append filter arguments
         if (filters != null) {
             if (filters.length > 0 && filters.length % 2 == 0) {
                 api += "?";
@@ -190,7 +192,8 @@ public class SoundCloud {
         } else {
         	api += "?consumer_key="+this.app_client_id;
         }
-        
+
+        // TODO: execute each type of request in a separate method (get, post, put, delete)
         try {
             
             Request resource;
@@ -655,7 +658,7 @@ public class SoundCloud {
     /**
      * Get a specific playlist.
      * 
-     * @param id
+     * @param playlist_id
      * @return
      */
     public Playlist getPlaylist(Integer playlist_id){
@@ -689,7 +692,7 @@ public class SoundCloud {
     /**
      * Get a specific user.
      * 
-     * @param id
+     * @param contact_id
      * @return
      */
     public User getUser(Integer contact_id){
@@ -735,7 +738,7 @@ public class SoundCloud {
     /**
      * Get a specific track.
      * 
-     * @param id
+     * @param track_id
      * @return
      */
     public Track getTrack(Integer track_id){
@@ -895,6 +898,7 @@ public class SoundCloud {
         return this.delete("me/favorites/"+Integer.toString(track_id));
     }
 
+    // TODO: specify javadoc comments
     private String replaceJsonsBlank(String string) {
         Pattern pattern = Pattern.compile(":(?: +)?\"\"");
         Matcher matcher = pattern.matcher(string);
