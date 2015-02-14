@@ -26,8 +26,15 @@ crashlytics.properties
 crashlytics-build.properties
 
 # project
-target/
-!target/*.jar
+target/archive-tmp
+target/classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/surefire-reports
+target/test-classes
+target/MANIFEST.MF
 
 # sensitive env settings
 src/test/java/de/voidplus/soundcloud/Settings.java

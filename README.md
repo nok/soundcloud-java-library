@@ -29,8 +29,8 @@ Unofficial Java library, which simplifies the use of the official [SoundCloud Ja
 
 ## Download
 
-- [soundcloud-0.2.0-jar-with-dependencies.jar](target/soundcloud-0.2.0-jar-with-dependencies.jar?raw=true) (see the list of [dependencies](#dependencies))
-- [soundcloud-0.2.0.jar](target/soundcloud-0.2.0.jar?raw=true)
+- [soundcloud-0.2.1-jar-with-dependencies.jar](target/soundcloud-0.2.1-jar-with-dependencies.jar?raw=true) (see the list of [dependencies](#dependencies))
+- [soundcloud-0.2.1.jar](target/soundcloud-0.2.1.jar?raw=true)
 
 
 ## Dependencies

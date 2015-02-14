@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.voidplus</groupId>
 	<artifactId>soundcloud</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 	<repositories>
 		<repository>
 			<id>repo</id>
