@@ -1,26 +1,18 @@
 package de.voidplus.soundcloud;
 
 
+import com.google.gson.Gson;
+import com.soundcloud.api.*;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-
-import com.google.gson.Gson;
-
-import com.soundcloud.api.ApiWrapper;
-import com.soundcloud.api.Endpoints;
-import com.soundcloud.api.Http;
-import com.soundcloud.api.Params;
-import com.soundcloud.api.Request;
-import com.soundcloud.api.Token;
 
 
 public class SoundCloud {
@@ -29,7 +21,7 @@ public class SoundCloud {
     public static final String VERSION = "0.2.1";
 
 
-    private enum Type {
+    public enum Type {
         USER,
         TRACK,
         PLAYLIST,
@@ -37,7 +29,7 @@ public class SoundCloud {
         GROUP
     }
 
-    private enum Rest {
+    public enum Rest {
         GET,
         PUT,
         POST,
