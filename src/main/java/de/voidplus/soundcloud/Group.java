@@ -3,14 +3,14 @@ package de.voidplus.soundcloud;
 public class Group {
 
     private Integer id;
-    private String created_at;
+    private String createdAt;
     private String permalink;
     private String name;
-    private String short_description;
+    private String shortDescription;
     private String description;
     private String uri;
-    private String permalink_url;
-    private String artwork_url;
+    private String permalinkUrl;
+    private String artworkUrl;
     private User creator;
 
     public Group()
@@ -38,7 +38,7 @@ public class Group {
     }
 
     public String getCreatedAt() {
-        return created_at;
+        return createdAt;
     }
 
     public String getPermalink() {
@@ -46,11 +46,11 @@ public class Group {
     }
 
     public String getShortDescription() {
-        return short_description;
+        return shortDescription;
     }
 
-    public void setShortDescription(String short_description) {
-        this.short_description = short_description;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
     public String getUri() {
@@ -58,11 +58,11 @@ public class Group {
     }
 
     public String getPermalinkUrl() {
-        return permalink_url;
+        return permalinkUrl;
     }
 
     public String getArtworkUrl() {
-        return artwork_url;
+        return artworkUrl;
     }
 
     public User getCreator() {
@@ -71,10 +71,10 @@ public class Group {
 
     @Override
     public String toString() {
-        return "Group [id=" + id + ", created_at=" + created_at
+        return "Group [id=" + id + ", createdAt=" + createdAt
                 + ", permalink=" + permalink + ", name=" + name + ", uri="
-                + uri + ", permalink_url=" + permalink_url + ", artwork_url="
-                + artwork_url + ", creator=" + creator + "]";
+                + uri + ", permalinkUrl=" + permalinkUrl + ", artworkUrl="
+                + artworkUrl + ", creator=" + creator + "]";
     }
     
 }
