@@ -7,7 +7,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,9 +16,7 @@ import java.util.regex.Pattern;
 
 public class SoundCloud {
 
-
     public static final String VERSION = "0.2.1";
-
 
     public enum Type {
         USER,
@@ -309,7 +306,7 @@ public class SoundCloud {
 
                         }
                     } else {
-                        System.err.println("Invalid status received: " + response.getStatusLine());
+                        System.err.println("Error, Invalid status received: " + response.getStatusLine());
                     }
                     break;
                 case POST:
