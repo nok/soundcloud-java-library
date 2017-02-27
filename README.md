@@ -1,4 +1,4 @@
-# SoundCloud Java library [![Build Status](https://travis-ci.org/nok/soundcloud-java-library.svg?branch=dev)](https://travis-ci.org/nok/soundcloud-java-library)
+# SoundCloud Java library [![Build Status](https://travis-ci.org/nok/soundcloud-java-library.svg?branch=dev)](https://travis-ci.org/nok/soundcloud-java-library) [![API Testing](https://img.shields.io/badge/API%20Test-RapidAPI-blue.svg)](https://rapidapi.com/package/Soundcloud/functions?utm_source=SoundcloudGithub&utm_medium=button&utm_content=Vender_GitHub)
 
 Unofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).
 
